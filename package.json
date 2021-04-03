@@ -14,6 +14,10 @@
     "url": "https://github.com/hrddd/react-redux-boilerplate/issues"
   },
   "homepage": "https://github.com/hrddd/react-redux-boilerplate#readme",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack -w"
+  },
   "devDependencies": {
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.3",
