@@ -1,3 +1,6 @@
+const path = require('path');
+const documentRoot = path.resolve(__dirname, 'public');
+
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
@@ -8,7 +11,8 @@ module.exports = {
   // ファイルの出力設定
   output: {
     //  出力ファイルのディレクトリ名
-    path: `${__dirname}/dist`,
+    path: `${documentRoot}/scripts/`,
+    publicPath: '/scripts/',
     // 出力ファイル名
     filename: "main.js"
   },
@@ -28,4 +32,12 @@ module.exports = {
   },
   // ES5(IE11等)向けの指定（webpack 5以上で必要）
   target: ["web", "es5"],
+  devServer: {
+    contentBase: documentRoot,
+    publicPath: '/scripts/',
+    port: 7272,
+    inline: true,
+    hot: true,
+    open: true
+  }
 };
